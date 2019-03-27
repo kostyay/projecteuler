@@ -11,7 +11,8 @@ const (
 // if ignoreMultiplier!=0 is given if the number is a multiplier of ignoreMultiplier it wont be considered in the result
 func getSumOfMultiplies(n, max, ignoreMultiplier int) int {
 	sum := 0
-	for i := 0; i < max; i += n {
+	for i := n; i < max; i += n {
+		// if ingoreMultiplier is given and the current number is a multiplier of it, skip it for the sum
 		if ignoreMultiplier != 0 && i%ignoreMultiplier == 0 {
 			continue
 		}
